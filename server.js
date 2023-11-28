@@ -1,12 +1,11 @@
 var express = require('express');
 var app = express();
-const dotenv= require('dotenv').config()
-var getAllItems =require('./CRUD_FUNCTIONS/selectItems')
+var dotenv= require('dotenv').config()
+var conectDB=require('./conectMSSQL')
+var port = process.env.PORT
 
 
-
-app.use(express.json())
-getAllItems()
-var server = app.listen(5000, function () {
-    console.log('Server is running..');
-});
+conectDB()
+app.listen(port,console.log('Server is running on ',port));
+app.use(express.json(),express.text())
+app.use('/api',require('./routes'))
