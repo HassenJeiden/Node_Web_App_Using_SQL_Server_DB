@@ -1,8 +1,10 @@
 var myRoutes = require('express').Router()
-var{getAllItems}=require('./CRUD_FUNCTIONS/selectItems')
+var{getAllItems,getitemsByBouk,nweBook}=require('./CRUD_FUNCTIONS/selectItems')
 
 
 
-myRoutes.get('/allBooks',getAllItems);
+myRoutes.get('/TousLesLivres',getAllItems);
+myRoutes.post('/ChercherUnLivre',getitemsByBouk);
+myRoutes.post('/AjouterUnLivre',nweBook);
 
 module.exports = myRoutes

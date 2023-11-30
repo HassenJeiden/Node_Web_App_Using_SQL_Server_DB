@@ -4,7 +4,7 @@ const sql = require('mssql');
 async function connect() {
     try {
         await sql.connect(config);
-        console.log("DataBase Connected Successfully");
+        console.log("powred by SQL Server Database");
     } catch (err) {
         console.error(err.message);
     }
